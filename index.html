@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Médica</title>
+    <link rel="stylesheet" href="estilos-index.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Inicio de sesión -->
+        <div id="login-form" class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <label for="login-username">Nombre</label>
+            <input type="text" id="login-username" placeholder="Ingrese su nombre">
+            <label for="login-id">Documento</label>
+            <input type="text" id="login-id" placeholder="Ingrese su documento">
+            <button onclick="login()">Iniciar Sesión</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="showRegisterForm()">Regístrate aquí</a></p>
+        </div>
+
+        <!-- Registro -->
+        <div id="register-form" class="form-container hidden">
+            <h2>Registro</h2>
+            <label for="reg-username">Nombre</label>
+            <input type="text" id="reg-username" placeholder="Ingrese su nombre">
+            <label for="reg-id">Documento</label>
+            <input type="text" id="reg-id" placeholder="Ingrese su documento">
+            <label for="reg-phone">Teléfono</label>
+            <input type="text" id="reg-phone" placeholder="Ingrese su teléfono">
+            <label for="reg-blood">Tipo de Sangre</label>
+            <select id="reg-blood">
+                <option value="">Seleccione su tipo de sangre</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <label for="reg-illness">Enfermedades</label>
+            <textarea id="reg-illness" placeholder="Ingrese sus enfermedades"></textarea>
+            <label for="reg-eps">Entidad Prestadora de Servicios</label>
+            <input type="text" id="reg-eps" placeholder="Ingrese su EPS">
+            <button onclick="register()">Registrarse</button>
+            <p>¿Ya tienes cuenta? <a href="#" onclick="showLoginForm()">Inicia sesión aquí</a></p>
+        </div>
+
+        <!-- Panel de Usuario -->
+        <div id="user-panel" class="form-container hidden">
+            <h2>Bienvenido, <span id="user-name"></span></h2>
+            <div id="user-info">
+                <p><b>Teléfono:</b> <span id="user-phone"></span></p>
+                <p><b>Tipo de Sangre:</b> <span id="user-blood"></span></p>
+                <p><b>Enfermedades:</b> <span id="user-illness"></span></p>
+                <p><b>EPS:</b> <span id="user-eps"></span></p>
+            </div>
+            <button onclick="showEditForm()">Editar Información</button>
+            <button onclick="logout()">Cerrar Sesión</button>
+        </div>
+
+        <!-- Edición de Información -->
+        <div id="edit-form" class="form-container hidden">
+            <h2>Editar Información</h2>
+            <label for="edit-phone">Teléfono</label>
+            <input type="text" id="edit-phone">
+            <label for="edit-blood">Tipo de Sangre</label>
+            <select id="edit-blood">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <label for="edit-illness">Enfermedades</label>
+            <textarea id="edit-illness"></textarea>
+            <label for="edit-eps">Entidad Prestadora de Servicios</label>
+            <input type="text" id="edit-eps">
+            <button onclick="saveChanges()">Guardar Cambios</button>
+            <button onclick="showUserPanel()">Cancelar</button>
+        </div>
+    </div>
+    <script src="script-index.js"></script>
+</body>
+</html>
